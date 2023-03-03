@@ -1,15 +1,17 @@
 package com.example.helloworld;
 
+import org.springframework.cglib.core.Local;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
-import java.util.Date;
+import java.time.LocalDate;
+
 
 @RestController
 public class Helloworld {
 
     @GetMapping("/hello")
     public String hello(){
-        Date date = new Date();
-        return "hello world" + date;
+        LocalDate date = LocalDate.now();
+        return "hello world " + date;
     }
 }
